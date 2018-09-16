@@ -40,7 +40,7 @@ def parse_options():
     (options, args) = parser.parse_args()
 
     if len(args) != 1:
-        parser.error("wrong number of arguments")
+        parser.error("wrong number of arguments, requires path to your new post file.")
 
     return (options, args)
 
