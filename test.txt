@@ -1,0 +1,26 @@
+Prerequisites: You can use the following AWS account for the challenge. Please only use the resources in the “free tier”.
+
+Console Login Link: https://643567162584.signin.aws.amazon.com/console
+Username: candidate
+Password: 4cinsights
+
+Please create a repository on GitHub with the following:
+- Create a Chef (www.chef.io) cookbook that provisions and configures an Ubuntu instance, running nginx inside a docker container that serves a plain html hello world file on port 80.
+- Create a Vagrantfile for managing a virtual machine with Ubuntu.
+- Create an Ansible playbook (with any associated roles or files), that can install WordPress (www.wordpress.org) blog on this virtual machine.
+- Write a Python script that can create blog posts on the WordPress installation given an input text file with the post content.
+- Write A README file to help us run the above.
+- When all of this is complete, send us a link to your repository.
+
+FAQ
+What scripting languages & tools can I use?
+Anyone you like. You’ll have to justify your decision. Please pick something you're familiar with, as you'll need to be able to discuss it.
+
+Will I have to pay for the AWS charges?
+No. You are expected to use free-tier resources only and not generate any charges.
+
+What will you looking for?
+Good understanding and execution skills on the core Technologies, ability to problem solve, good scripting/coding skills, Good communication skills.
+
+Will I have a chance to explain my choices?
+Feel free to comment your code. If we proceed to a phone/onsite/Skype interview, we’ll be asking questions about why you made the choices you made.

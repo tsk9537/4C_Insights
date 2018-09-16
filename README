@@ -1,0 +1,104 @@
+Prerequisites
+=============
+Please install Vagrant, Chef DK, Docker CE, and Ansible.
+
+Vagrant: https://www.vagrantup.com/downloads.html
+
+Chef DK: https://downloads.chef.io/chefdk
+
+Docker CE: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+Ansible: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+
+
+Instructions on creating a docker container and running the container.
+======================================================================
+If the docker commands return an error about VT-X, consult your computer BIOS to turn off VT-X or virtualization and restart your computer prior to running the following commands.
+
+
+Open up a terminal and traverse to the 4C_Insights folder.
+
+Build the docker container with the following command
+==================================================
+
+docker build -t tony/nginx .
+
+
+Run the docker container with the following command which will mount the 4C_Insights/www
+folder to the nginx instance running on the docker container and also map the docker
+container's port 80 to the host port 8090.
+==================================================
+
+docker run -v <YOUR PATH TO THE PARENT FOLDER>/4C_Insights/www:/app -p 8090:80 -d tony/nginx
+
+
+Open up the browser and go to the following URL to see the Hello World message
+==================================================
+
+localhost:8090
+
+
+
+Setup Vagrant with Ansible provisioned Wordpress
+================================================
+
+Traverse to the 4C_Insights/new_vm directory and run the following command.
+
+vagrant up
+
+
+To complete the Wordpress installation, point your browser to http://192.168.50.50 and choose English (United States) and press the continue button.
+
+Use the following information to configure the next screen, leave the rest of the fields at their defaults.
+
+name: user_wp
+password: wordpress
+host: localhost
+
+
+Hit the "Run the Install" button.
+
+
+On the next page fill in the form with the following information
+
+Site Title: 4C_Insights_Test
+Username: tony
+Password: tony_wordpress_123
+Email: tsk9537@gmail.com
+
+Hit the "Install Wordpress" button.
+
+Hit the "Log In" button on the following page.
+
+
+Post using a python script.
+===========================
+
+Make sure to install the python-wordpress-xmlrpc module to your python installation
+
+pip install python-wordpress-xmlrpc
+
+run the post_to_wordpress.py script with a file which contains the new post.
+
+For example...
+
+python post_to_wordpress.py new_post.txt
+
+
+Go to the Posts tab of the Wordpress Dashboard or go to the following URL and view the newly posted post.
+
+http://192.168.50.50/wp-admin/edit.php
+
+
+
+
+
+
+
+
+
+
+
+
+
