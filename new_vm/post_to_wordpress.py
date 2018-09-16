@@ -5,6 +5,7 @@ from optparse import OptionParser
 import shutil
 import os
 import sys
+import datetime
 
 def main():
     (options, args) = parse_options()
@@ -22,8 +23,11 @@ def main():
 
     client = Client('http://192.168.50.50/xmlrpc.php', 'tony', 'tony_wordpress_123')
 
+
+    now = datetime.datetime.now()
+    
     post = WordPressPost()
-    post.title = 'My New Post'
+    post.title = 'My New Post - %s' % now.strftime("%Y-%m-%d_%H_%M_%S")
     post.content = new_post_content
     post.id = client.call(posts.NewPost(post))
 

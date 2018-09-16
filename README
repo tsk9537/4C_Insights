@@ -103,5 +103,6 @@ python post_to_wordpress.py new_post.txt
 
 
 Browse to the Posts tab of the Wordpress Dashboard or go to the following URL and view the newly posted post.
+The title of the post should be "My New Post" with a date timestamp on the title.
 
 http://192.168.50.50/wp-admin/edit.php
