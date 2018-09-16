@@ -4,7 +4,7 @@ from wordpress_xmlrpc import WordPressPost
 from optparse import OptionParser
 import shutil
 import os
-
+import sys
 
 def main():
     (options, args) = parse_options()
@@ -14,6 +14,7 @@ def main():
     #
     if not os.path.exists(args[0]):
         print("File:%s does not exists, aborting!" % args[0])
+        sys.exit(100)
 
     new_post_file = open(args[0], 'r')
     new_post_content = new_post_file.read()
