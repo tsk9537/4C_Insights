@@ -11,11 +11,17 @@ Docker CE: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 Ansible: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
 
 
+Please clone the Github repo or download and unzip the contents to a working directory.
+https://github.com/tsk9537/4C_Insights.git
 
-Instructions on creating a docker container and running the container.
+
+Instructions on creating a docker container and configuring with Chef.
 Please have the Docker Daemon running prior to running the commands below.
-If the docker commands return an error about VT-X, consult your computer BIOS to turn off VT-X or virtualization and restart your computer prior to running the following commands.
-============================================================================================================================================
+If the docker commands return an error about VT-X, consult your computer
+BIOS to turn off VT-X or virtualization and restart your computer prior
+to running the following commands.  You may need to also turn off Secure Boot
+in your BIOS to run the Vagrant portion of the instructions.
+=============================================================================
 
 Open up a terminal and traverse to the 4C_Insights folder.
 
@@ -24,6 +30,10 @@ Build the docker container with the following command, you may need to run with 
 =================================================================================================
 
 docker build -t tony/nginx .
+
+or 
+
+sudo docker build -t tony/nginx .
 
 
 Run the docker container with the following command which will mount the 4C_Insights/www
@@ -45,15 +55,16 @@ http://localhost:8090
 At this point your browser should be seeing the Hello World message.
 
 
-Setup Vagrant with Ansible provisioned Wordpress
-================================================
+Setting up Vagrant VM with Ansible provisioned Wordpress
+========================================================
 
 Traverse to the 4C_Insights/new_vm directory and run the following command.
 
 vagrant up
 
 
-To complete the Wordpress installation, point your browser to http://192.168.50.50 and choose English (United States) and press the continue button.
+To complete the Wordpress installation, point your browser to http://192.168.50.50 and choose
+English (United States) and press the continue button.
 
 Use the following information to configure the next screen, leave the rest of the fields at their defaults.
 
@@ -77,8 +88,8 @@ Hit the "Install Wordpress" button.
 Hit the "Log In" button on the following page.
 
 
-Post using a python script.
-===========================
+Post to Wordpress using a python script.
+========================================
 
 Make sure to install the python-wordpress-xmlrpc module to your python installation
 
@@ -91,19 +102,6 @@ For example...
 python post_to_wordpress.py new_post.txt
 
 
-Go to the Posts tab of the Wordpress Dashboard or go to the following URL and view the newly posted post.
+Browse to the Posts tab of the Wordpress Dashboard or go to the following URL and view the newly posted post.
 
 http://192.168.50.50/wp-admin/edit.php
-
-
-
-
-
-
-
-
-
-
-
-
-
