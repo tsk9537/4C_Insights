@@ -23,7 +23,6 @@ def main():
 
     client = Client('http://192.168.50.50/xmlrpc.php', 'tony', 'tony_wordpress_123')
 
-
     now = datetime.datetime.now()
     
     post = WordPressPost()
@@ -35,11 +34,8 @@ def main():
     client.call(posts.EditPost(post.id, post))
 
 
-
-
 def parse_options():
-    parser = OptionParser(usage="usage: %prog [options] filename",
-                          version="%prog 1.0")
+    parser = OptionParser(usage="usage: %prog [options] filename", version="%prog 1.0")
 
     (options, args) = parser.parse_args()
 
