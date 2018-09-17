@@ -1,3 +1,7 @@
+All of the instructions were run on a linux laptop running Linux Mint 18.3.  Due to some incompatibilities with Windows, I recommend running
+the instructions in either a linux or Mac environment.
+
+
 Prerequisites
 =============
 Please install Virtualbox, Vagrant, Chef DK, Docker CE, and Ansible.
