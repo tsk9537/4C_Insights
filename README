@@ -1,6 +1,8 @@
 Prerequisites
 =============
-Please install Vagrant, Chef DK, Docker CE, and Ansible.
+Please install Virtualbox, Vagrant, Chef DK, Docker CE, and Ansible.
+
+Virtualbox: https://www.virtualbox.org/wiki/Downloads
 
 Vagrant: https://www.vagrantup.com/downloads.html
 
